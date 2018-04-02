@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Endereco } from '../domain/endereco';
+import { EnderecoService } from '../services/endereco.service';
 
 @Component({
   selector: 'app-endereco',
@@ -7,9 +9,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EnderecoComponent implements OnInit {
 
-  constructor() { }
+cep : string;
+endereco : Endereco;
+
+
+  constructor(private enderecoService: EnderecoService) { }
 
   ngOnInit() {
   }
+
+getCep(){
+  this.enderecoService.getEndereco(this.cep)
+  .subscribe(response => { 
+     this.endereco = response;
+console.log(this.endereco);
+
+  
+  
+  
+  })
+
+}
+
 
 }
