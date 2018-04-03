@@ -5,11 +5,11 @@
 
   <label> Digite o cep </label>
   <input class ="form-control"type="text" [(ngModel)]= "cep" size= "10">
-  <button class="btn primary"(click)="getCep()">Digite seu CEP</button> 
+  <button class="btn btn-primary"(click)="getCep()">Digite seu CEP</button> 
 </div>
 </div>
 
-<div class ="container">
+<div class ="container" *ngIf="endereco">
 <div cllas ="form-group">
 <label>Endereco</label>
 <small class ="form-text">{{endereco.logradouro}}</small>
